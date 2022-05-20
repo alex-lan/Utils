@@ -3,7 +3,7 @@
 > A library made by AlexL
 
 [![](https://jitpack.io/v/alex-lan/Utils.svg)](https://jitpack.io/#alex-lan/Utils)
-[![](https://img.shields.io/badge/license-Apache2-blue)]([license-url](https://opensource.org/licenses/Apache-2.0))
+[![](https://img.shields.io/badge/license-Apache2-blue)](https://opensource.org/licenses/Apache-2.0)
 
 1. Add the JitPack repository to your build file
 
