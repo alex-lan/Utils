@@ -16,7 +16,7 @@ open class AUtils {
     /**
      * 全局的 logTag，你仍可以每个log单独设置tag： 内容.i(tag)
      */
-    var logTag: String = BuildConfig.LOG_TAG
+    var logTag: String? = BuildConfig.LOG_TAG
 
     companion object {
         private var INSTANCE: AUtils? = null

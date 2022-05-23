@@ -12,7 +12,7 @@ import com.alex.l.utils.BuildConfig
  * @author AlexL 2021/5/27
  */
 
-private val logTag = AUtils.init().logTag
+private val logTag = AUtils.init().logTag!!
 private val context by Weak { AUtils.getContext() }
 
 private fun log(level: Int, tag: String, msg: String) {
