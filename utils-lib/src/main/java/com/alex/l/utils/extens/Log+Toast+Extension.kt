@@ -3,7 +3,6 @@ package com.alex.l.utils.extens
 import android.util.Log
 import android.widget.Toast
 import com.alex.l.utils.AUtils
-import com.alex.l.utils.BuildConfig
 
 /**
  * 类名: Log&Toast扩展方法
@@ -12,11 +11,12 @@ import com.alex.l.utils.BuildConfig
  * @author AlexL 2021/5/27
  */
 
-private val logTag = AUtils.init().logTag!!
+private val logTag = AUtils.init().logTag
 private val context by Weak { AUtils.getContext() }
+private val logOpen = AUtils.init().logOpen
 
 private fun log(level: Int, tag: String, msg: String) {
-    if (BuildConfig.DEBUG)
+    if (logOpen)
         when (level) {
             Log.DEBUG -> Log.d(tag, msg)
             Log.ERROR -> Log.e(tag, msg)

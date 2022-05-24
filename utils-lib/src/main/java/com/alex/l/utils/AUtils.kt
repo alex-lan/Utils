@@ -9,14 +9,20 @@ import com.alex.l.utils.extens.Weak
  * -
  * * Created by [Alex Y. Lan] on [2022-05-22]
  * * Power by AndroidStudio™ IDE
+ * * 要使用全部工具，请初始化 AUtils.init{ context = anyContext } ，且务必对 context 赋值
  */
 open class AUtils {
     var context: Context? by Weak()
-    // by Weak()
+
     /**
-     * 全局的 logTag，你仍可以每个log单独设置tag： 内容.i(tag)
+     * 全局的 logTag，你仍可以每个log单独设置tag，方法： “内容”.i(tag)
      */
     var logTag: String = BuildConfig.LOG_TAG
+
+    /**
+     * * 全局控制是否显示log的开关，默认 TRUE, 最好使用BuildConfig.DEBUG赋值, 这样log内容就不会在发行版本中被打印
+     */
+    var logOpen: Boolean = true
 
     companion object {
         private var INSTANCE: AUtils? = null

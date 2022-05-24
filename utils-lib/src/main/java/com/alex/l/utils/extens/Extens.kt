@@ -9,7 +9,7 @@ import kotlin.reflect.KProperty
  */
 
 /**
- * Weak-Reference customize
+ * WeakReference customize
  *
  * Usege:
  * * var i by Weak{ any }

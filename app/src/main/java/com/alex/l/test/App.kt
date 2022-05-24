@@ -15,6 +15,8 @@ class App: Application() {
         super.onCreate()
         AUtils.init {
             context = this@App
+            logOpen = true
+            logTag = "--AUtils--"
         }
     }
 
