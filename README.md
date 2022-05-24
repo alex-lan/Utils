@@ -1,6 +1,6 @@
 # Utils
 
-> A utilities lib made by AlexL
+> A utilities-lib made by AlexL
 
 [![](https://jitpack.io/v/alex-lan/Utils.svg)](https://jitpack.io/#alex-lan/Utils)
 [![](https://img.shields.io/badge/license-Apache2-blue)](https://opensource.org/licenses/Apache-2.0)
