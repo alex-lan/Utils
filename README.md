@@ -7,7 +7,7 @@
 
 ***
 
-* ## Usege
+### Usege
 1. Add the JitPack repository to your build file
 
 ```
@@ -25,7 +25,7 @@ dependencies {
     implementation 'com.github.alex-lan:Utils:$version'
 }
 ```
-3. init & use
+3. Init & Use
 ```
 AUtils.init {
     context = ...
@@ -37,7 +37,7 @@ AUtils.init {
 
 "xxxx".i() / "xxxx".e() / "xxxx".d() / "xxxx".v() / ...
 
-(int or float).px2dp() / (int or float).dp2px() ...
+(int or float).px2dp() / (int or float).dp2px() / ...
 
 WeakReference: var any by Weak<Any>() ...
 
@@ -46,7 +46,7 @@ WeakReference: var any by Weak<Any>() ...
 
 ***
 
-* ## LICENSE
+### LICENSE
 ````
 Copyright 2020 AlexL
 
