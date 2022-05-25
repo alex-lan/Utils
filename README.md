@@ -42,6 +42,9 @@ AUtils.init {
 WeakReference: var any by Weak<Any>() ...
 
 _screenWidth / _screenHeight
+
+"xxx".md5() / "xxx".sha1() / "xxx".sha256()
+
 ... ...
 ```
 
