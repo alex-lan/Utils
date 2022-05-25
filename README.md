@@ -41,6 +41,7 @@ AUtils.init {
 
 WeakReference: var any by Weak<Any>() ...
 
+_screenWidth / _screenHeight
 ... ...
 ```
 
