@@ -1,4 +1,4 @@
-package com.alex.l.utils
+package com.alex.l.utils.objs
 
 /**
  * [AException]
