@@ -33,17 +33,27 @@ AUtils.init {
 }
 ```
 ```
-"xxxx".toast() / "xxxx".toast(0 or 1)
+1. Toast: "xxxx".toast() / "xxxx".toast(0 or 1)
 
-"xxxx".i() / "xxxx".e() / "xxxx".d() / "xxxx".v() / ...
+2. Logcat: "xxxx".i() / "xxxx".e() / "xxxx".d() / "xxxx".v() / ...
 
-(int or float).px2dp() / (int or float).dp2px() / ...
+3. 转换：(int or float).px2dp() / (int or float).dp2px() / ...
 
-WeakReference: var any by Weak<Any>() ...
+4. 弱引用：WeakReference: var any by Weak<Any>() ...
 
-_screenWidth / _screenHeight
+5. 全局屏幕宽高：_screenWidth / _screenHeight
 
-"xxx".md5() / "xxx".sha1() / "xxx".sha256()
+6. _network 是 NetWork 的一个全局实例，可以获得网络状态和类别：如 _network.isConnected、_network.isWifi、_network.netType 等...
+
+7. 加密："xxx".md5() / "xxx".sha1() / "xxx".sha256()
+
+8. 提供一些零星方法：比如 ExecutorService.shutdown() 、View.getAllChildViews()
+
+9. RecyclerViewItemClickSupport：使用在绑定监听 RecyclerView - item 的点击事件，防双击，这是可选方法之一（MVVM 架构下几乎用不到）
+设置方法：RecyclerViewItemClickSupport.addTo(recyclerView).setOnItemClickListener(listener)
+注销监听：RecyclerViewItemClickSupport.removeFrom(recyclerView)
+
+10. SoftKeyBroadStateObserve 软键盘状态监听，使用方法: SoftKeyBroadStateObserve.with(decorView).addStateListener(object :listener)
 
 ... ...
 ```

@@ -126,6 +126,7 @@ class NetWork private constructor() {
                 cm.activeNetworkInfo
             } catch (e: SecurityException) {
                 e.printStackTrace()
+                "是否在AndroidManifest 添加了 android.permission.ACCESS_NETWORK_STATE ?".w()
                 e.message?.toast(1)
                 null
             }
