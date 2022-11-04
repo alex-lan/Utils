@@ -12,7 +12,6 @@ import com.alex.l.utils.AUtils
  */
 
 private val logTag = AUtils.init().logTag
-private val context by Weak { AUtils.getContext() }
 private val logOpen = AUtils.init().logOpen
 
 private fun log(level: Int, tag: String, msg: String) {
@@ -75,7 +74,8 @@ fun String.w(tag: String = logTag) {
  * @param duration
  * * 0 - LENGTH_SHORT
  * * 1 - LENGTH_LONG
+ * ### 要使用 "xxx".toast()，请初始化 AUtils.init{ context = anyContext } 并对 context 赋值
  */
 fun CharSequence.toast(duration: Int = Toast.LENGTH_SHORT) {
-    context!!.let { Toast.makeText(context, this, duration).show() }
+    AUtils.getContext()?.let { Toast.makeText(AUtils.getContext(), this, duration).show() }
 }

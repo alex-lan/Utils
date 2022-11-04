@@ -1,7 +1,6 @@
 package com.alex.l.test
 
-import android.app.Application
-import com.alex.l.utils.AUtils
+import com.alex.l.utils.objs.AApplication
 
 /**
  * [App]
@@ -9,15 +8,11 @@ import com.alex.l.utils.AUtils
  * Created by [Alex Y. Lan] on [2022-05-24]
  * Power by AndroidStudio™ IDE
  */
-class App: Application() {
+class App: AApplication() {
 
     override fun onCreate() {
         super.onCreate()
-        AUtils.init {
-            context = this@App
-            logOpen = true
-            logTag = "--AUtils--"
-        }
+
     }
 
 }

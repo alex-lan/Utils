@@ -8,15 +8,15 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/**
- * -
- * * Created by [Alex Y. Lan] on [2022-05-26]
- * * Power by AndroidStudio™ IDE
+/*
+  -
+  * Created by [Alex Y. Lan] on [2022-05-26]
+  * Power by AndroidStudio™ IDE
  */
 
 /**
- * * in base Activity - 'onResume()' add 'ActControl.onResume(this)'
- * * in base Activity - 'onDestroy()' add 'ActControl.onDestroy(this)'
+ * * in base Activity -> 'onResume()' add 'ActControl.onResume(this)'
+ * * in base Activity -> 'onDestroy()' add 'ActControl.onDestroy(this)'
  * * use 'ActControl.appExit()' where you want exit the app Completely
  */
 public class ActControl {

@@ -10,7 +10,7 @@ import com.alex.l.utils.objs.AException
  * -
  * * Created by [Alex Y. Lan] on [2022-05-22]
  * * Power by AndroidStudio™ IDE
- * * 要使用全部工具，请初始化 AUtils.init{ context = anyContext } ，且务必对 context 赋值
+ * ### 要使用全部工具，请初始化 AUtils.init{ context = anyContext } ，且务必对 context 赋值
  */
 open class AUtils {
     var context: Context? by Weak()

@@ -1,5 +1,10 @@
 package com.alex.l.utils.extens
 
+import android.annotation.SuppressLint
+import android.content.Context
+import android.net.ConnectivityManager
+import android.net.NetworkInfo
+import com.alex.l.utils.AUtils
 import java.lang.ref.WeakReference
 import java.math.BigInteger
 import java.security.MessageDigest
@@ -64,17 +69,114 @@ fun ExecutorService.shutdown(poolAlies: String = "") {
 
 // ------------ encryption ---------------
 
+/**
+ * Md5
+ *
+ * @return result
+ */
 fun String.md5(): String {
     val md = MessageDigest.getInstance("MD5")
     return BigInteger(1, md.digest(toByteArray())).toString(16).padStart(32, '0')
 }
 
+/**
+ * Sha1
+ *
+ * @return result
+ */
 fun String.sha1(): String {
     val md = MessageDigest.getInstance("SHA-1")
     return BigInteger(1, md.digest(toByteArray())).toString(16).padStart(32, '0')
 }
 
+/**
+ * Sha256
+ *
+ * @return result
+ */
 fun String.sha256(): String {
     val md = MessageDigest.getInstance("SHA-256")
     return BigInteger(1, md.digest(toByteArray())).toString(16).padStart(32, '0')
+}
+
+// -------------- Cust NetWork Object -------------
+/**
+ * _network 是 NetWork 的一个全局实例
+ * @see com.alex.l.utils.extens.NetWork
+ */
+val _network: NetWork by lazy {
+    NetWork.init()
+}
+
+/**
+ * NetWork
+ * 若需要实例化，必须在 AndroidManifest.xml  添加  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+ */
+class NetWork private constructor() {
+    private val context by Weak { AUtils.getContext() }
+
+    /**
+     * @see android.net.ConnectivityManager
+     */
+    var cm: ConnectivityManager
+    val info: NetworkInfo?
+        @SuppressLint("MissingPermission")
+        get() {
+            return try {
+                cm.activeNetworkInfo
+            } catch (e: SecurityException) {
+                e.printStackTrace()
+                e.message?.toast(1)
+                null
+            }
+        }
+
+    companion object {
+        private var INSTANCE: NetWork? = null
+        fun init() = INSTANCE ?: NetWork().also {
+            INSTANCE = it
+        }
+    }
+
+    init {
+        (" —— NetWork初始化！——").i()
+        cm = context?.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+
+    }
+
+    /**
+     * If Network connected
+     *
+     * @return
+     */
+    val isConnected: Boolean
+        get() {
+            if (info?.isConnected == true) {
+                return info!!.state == NetworkInfo.State.CONNECTED
+            }
+            return false
+        }
+
+    /**
+     * 判断是否是wifi连接
+     */
+    val isWifi: Boolean
+        get() {
+            return netType == ConnectivityManager.TYPE_WIFI
+        }
+
+    /**
+     * 网络类型
+     * @sample android.net.ConnectivityManager.TYPE_WIFI
+     * @see android.net.ConnectivityManager
+     *
+     * @return
+     */
+    val netType: Int
+        get() {
+            return if (info != null) {
+                info!!.type
+            } else -1
+        }
+
 }
