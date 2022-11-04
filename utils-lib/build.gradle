@@ -5,7 +5,7 @@ plugins {
 }
 
 group = 'com.github.alex-lan'
-version = '1.0.4'
+version = '1.0.6'
 
 android {
     compileSdk 32
@@ -58,7 +58,7 @@ afterEvaluate {
                 // 发布后引用的依赖的 artifact id
                 artifactId 'utils-lib'
                 // 发布的版本
-                version '1.0.4'
+                version '1.0.6'
                 // 发布的 arr 的文件和源码文件
             }
         }
